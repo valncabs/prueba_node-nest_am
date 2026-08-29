@@ -40,12 +40,12 @@
 
 ## 🚀 Express
 
-- [ ] ¿Qué es Express?
-- [ ] Instalación de Express
-- [ ] Crear un servidor con Express
-- [ ] Rutas básicas
-- [ ] Request y Response
-- [ ] Crear una API básica con Express
+- [x] ¿Qué es Express?
+- [x] Instalación de Express
+- [x] Crear un servidor con Express
+- [x] Rutas básicas
+- [x] Request y Response
+- [x] Crear una API básica con Express
 
 ---
 
