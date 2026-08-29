@@ -1,4 +1,5 @@
 import type { Request, Response } from "express";
+import type { createUserDto } from "../dto/user.dto";
 
 export const getUsers = (req: Request, res: Response):void =>{
     
@@ -25,7 +26,7 @@ export const createUser = (req: Request, res: Response): void => {
         return;
     }
 
-    const user = req.body;
+    const user : createUserDto = req.body;
 
     res.status(201).json({
         message: "Usuario creado correctamente",
