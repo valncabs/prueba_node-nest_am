@@ -6,37 +6,37 @@
 
 ## 🔷 TypeScript y estructuras
 
-- [ ] Introducción a TypeScript
-- [ ] Variables y tipos
-- [ ] Tipado en TypeScript
-- [ ] Condicionales
-- [ ] Estructuras de iteración
-- [ ] Promesas
-- [ ] Arrays
-- [ ] Clases
-- [ ] Interfaces
-- [ ] Objetos
-- [ ] Funciones
-- [ ] Programación asíncrona
-- [ ] `async / await`
+- [x] Introducción a TypeScript
+- [x] Variables y tipos
+- [x] Tipado en TypeScript
+- [x] Condicionales
+- [x] Estructuras de iteración
+- [x] Promesas
+- [x] Arrays
+- [x] Clases
+- [x] Interfaces
+- [x] Objetos
+- [x] Funciones
+- [x] Programación asíncrona
+- [x] `async / await`
 
 ## 🟢 Node.js
 
-- [ ] ¿Qué es Node.js?
-- [ ] Lifecycle de Node.js
-- [ ] Event Loop de Node.js
-- [ ] Cómo funciona la asincronía en Node.js
+- [x] ¿Qué es Node.js?
+- [x] Lifecycle de Node.js
+- [x] Event Loop de Node.js
+- [x] Cómo funciona la asincronía en Node.js
 
 ## 📦 NPM y paquetes
 
-- [ ] ¿Qué es NPM?
-- [ ] `package.json`
-- [ ] Dependencias
-- [ ] Dependencias de producción
-- [ ] Dependencias de desarrollo
-- [ ] SDK
-- [ ] Librerías
-- [ ] Diferencia entre SDK y librería
+- [x] ¿Qué es NPM?
+- [x] `package.json`
+- [x] Dependencias
+- [x] Dependencias de producción
+- [x] Dependencias de desarrollo
+- [x] SDK
+- [x] Librerías
+- [x] Diferencia entre SDK y librería
 
 ## 🚀 Express
 
