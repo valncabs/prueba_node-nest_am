@@ -53,54 +53,54 @@
 
 ## 🌐 APIs y REST
 
-- [ ] ¿Qué es una API?
-- [ ] ¿Qué es REST?
-- [ ] Principios de RESTful
-- [ ] Recursos en una API
-- [ ] Endpoints
-- [ ] Métodos HTTP
+- [x] ¿Qué es una API?
+- [x] ¿Qué es REST?
+- [x] Principios de RESTful
+- [x] Recursos en una API
+- [x] Endpoints
+- [x] Métodos HTTP
 
 ### CRUD
 
-- [ ] `POST` — Create: Crear un recurso
-- [ ] `GET` — Read: Obtener recursos
-- [ ] `PUT` — Update: Actualizar un recurso
-- [ ] `DELETE` — Delete: Eliminar un recurso
+- [x] `POST` — Create: Crear un recurso
+- [x] `GET` — Read: Obtener recursos
+- [x] `PUT` — Update: Actualizar un recurso
+- [x] `DELETE` — Delete: Eliminar un recurso
 
 ## 🌍 HTTP
 
-- [ ] ¿Qué es HTTP?
-- [ ] Request HTTP
-- [ ] Response HTTP
-- [ ] Headers
-- [ ] Body
-- [ ] Parámetros
-- [ ] Query parameters
-- [ ] Path parameters
-- [ ] Métodos HTTP
-- [ ] Códigos de respuesta HTTP
+- [x] ¿Qué es HTTP?
+- [x] Request HTTP
+- [x] Response HTTP
+- [x] Headers
+- [x] Body
+- [x] Parámetros
+- [x] Query parameters
+- [x] Path parameters
+- [x] Métodos HTTP
+- [x] Códigos de respuesta HTTP
 
 ## 🧪 Postman
 
-- [ ] ¿Qué es Postman?
-- [ ] Crear requests
-- [ ] Probar endpoints
-- [ ] Enviar parámetros
-- [ ] Enviar JSON
-- [ ] Headers
-- [ ] Probar métodos GET
-- [ ] Probar métodos POST
-- [ ] Probar métodos PUT
-- [ ] Probar métodos DELETE
+- [x] ¿Qué es Postman?
+- [x] Crear requests
+- [x] Probar endpoints
+- [x] Enviar parámetros
+- [x] Enviar JSON
+- [x] Headers
+- [x] Probar métodos GET
+- [x] Probar métodos POST
+- [x] Probar métodos PUT
+- [x] Probar métodos DELETE
 
 ## ⚙️ Express
 
-- [ ] Ciclo de vida de Express
-- [ ] Ciclo de vida de una petición
-- [ ] Request
-- [ ] Middleware
-- [ ] Response
-- [ ] Orden de ejecución de middlewares
+- [x] Ciclo de vida de Express
+- [x] Ciclo de vida de una petición
+- [x] Request
+- [x] Middleware
+- [x] Response
+- [x] Orden de ejecución de middlewares
 
 ## 🧩 Middleware
 
