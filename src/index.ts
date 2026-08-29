@@ -1,5 +1,5 @@
 import express from "express";
-import type { Request, Response, NextFunction } from "express";
+import type { Request, Response} from "express";
 import userRouter from "./routes/user.routes";
 
 const app = express()
@@ -8,10 +8,10 @@ app.use(express.json());
 
 app.use("/users", userRouter);
 
-app.use((req: Request, res: Response, next: NextFunction):void =>{
-    console.log(`${req.method} ${req.url}`);
-    next()
-})
+// app.use((req: Request, res: Response, next: NextFunction):void =>{
+//     console.log(`${req.method} ${req.url}`);
+//     next()
+// })
 
 
 // const validateUser = (req: Request, res: Response, next: NextFunction): void => {
@@ -33,7 +33,7 @@ app.use((req: Request, res: Response, next: NextFunction):void =>{
 //     });
 // });
 
-app.get("/health", (req, res)=>{
+app.get("/health", (req: Request, res: Response)=>{
     res.json({
         status: 'ok',
         message: 'Servidor funcionando'
