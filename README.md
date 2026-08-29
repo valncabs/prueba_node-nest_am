@@ -104,13 +104,13 @@
 
 ## 🧩 Middleware
 
-- [ ] ¿Qué es un middleware?
-- [ ] Middleware a nivel de aplicación
-- [ ] Middleware de rutas
-- [ ] Middleware personalizado
-- [ ] Middleware `cors`
-- [ ] ¿Qué es CORS?
-- [ ] Configuración de CORS
+- [x] ¿Qué es un middleware?
+- [x] Middleware a nivel de aplicación
+- [x] Middleware de rutas
+- [x] Middleware personalizado
+- [x] Middleware `cors`
+- [x] ¿Qué es CORS?
+- [x] Configuración de CORS
 
 ## 📡 Axios
 
