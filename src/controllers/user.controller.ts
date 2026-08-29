@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
 import { CreateUserDto } from "../dto/user.dto";
 import { createUserService } from "../services/user.service";
+import type { UserRepository } from "../repositories/interfaces/user.repository.interface";
+import { UserRepositoryImpl } from "../repositories/user.repository";
+
 export const getUsers = (req: Request, res: Response):void =>{
     
     res.status(200).json({
@@ -15,12 +18,10 @@ export const getUser = (req: Request, res: Response):void=>{
     })
 }
 
-export const createUser = (req: Request, res: Response): void => {
-
-    const user: CreateUserDto = req.body;
-
-    const result = createUserService(user);
-
+export const createUser = async (req: Request, res: Response): Promise<void> => {
+const user: CreateUserDto = req.body;
+    const repository = new UserRepositoryImpl();
+    const result = await createUserService(user, repository);
     res.status(201).json({
         message: "Usuario creado correctamente",
         user: result
