@@ -168,25 +168,25 @@
 
 ## 🔐 Variables de entorno
 
-- [ ] ¿Qué es `dotenv`?
-- [ ] Instalación de `dotenv`
-- [ ] Archivo `.env`
-- [ ] Variables de entorno
-- [ ] Uso de `process.env`
-- [ ] Buenas prácticas con variables sensibles
-- [ ] No subir `.env` al repositorio
+- [x] ¿Qué es `dotenv`?
+- [x] Instalación de `dotenv`
+- [x] Archivo `.env`
+- [x] Variables de entorno
+- [x] Uso de `process.env`
+- [x] Buenas prácticas con variables sensibles
+- [x] No subir `.env` al repositorio
 
 ## 🗄️ ORM
 
-- [ ] ¿Qué es un ORM?
-- [ ] Ventajas de utilizar un ORM
-- [ ] ¿Qué es Sequelize?
-- [ ] Instalación de Sequelize
-- [ ] Configuración de Sequelize
-- [ ] Conexión con base de datos
-- [ ] Creación de modelos
-- [ ] Relaciones entre modelos
-- [ ] CRUD con Sequelize
+- [x] ¿Qué es un ORM?
+- [x] Ventajas de utilizar un ORM
+- [x] ¿Qué es Sequelize?
+- [x] Instalación de Sequelize
+- [x] Configuración de Sequelize
+- [x] Conexión con base de datos
+- [x] Creación de modelos
+- [x] Relaciones entre modelos
+- [x] CRUD con Sequelize
 
 ## 🔑 Contraseñas
 
@@ -394,12 +394,12 @@
 
 ## 🌐 Códigos HTTP
 
-- [ ] `200 OK` — Operación exitosa
-- [ ] `400 Bad Request` — Solicitud incorrecta
-- [ ] `401 Unauthorized` — Falta de autenticación
-- [ ] `403 Forbidden` — Acceso denegado
-- [ ] `404 Not Found` — Recurso no encontrado
-- [ ] `500 Internal Server Error` — Error del servidor
+- [x] `200 OK` — Operación exitosa
+- [x] `400 Bad Request` — Solicitud incorrecta
+- [x] `401 Unauthorized` — Falta de autenticación
+- [x] `403 Forbidden` — Acceso denegado
+- [x] `404 Not Found` — Recurso no encontrado
+- [x] `500 Internal Server Error` — Error del servidor
 
 ---
 
@@ -601,112 +601,13 @@
 
 ---
 
-# 🏆 CHECKLIST FINAL — REPASO GENERAL
 
-## TypeScript
-- [ ] Variables y tipos
-- [ ] Condicionales
-- [ ] Iteraciones
-- [ ] Arrays
-- [ ] Objetos
-- [ ] Clases
-- [ ] Interfaces
-- [ ] Funciones
-- [ ] Promesas
-- [ ] Async/Await
-
-## Node.js + Express
-- [ ] Lifecycle
-- [ ] Event Loop
-- [ ] NPM
-- [ ] package.json
-- [ ] Dependencias
-- [ ] SDK y librerías
-- [ ] Express
-- [ ] Middleware
-- [ ] CORS
-- [ ] Request / Response
-
-## APIs
-- [ ] REST
-- [ ] HTTP
-- [ ] CRUD
-- [ ] Postman
-- [ ] Axios
-- [ ] WebSocket
-
-## Archivos y automatización
-- [ ] fs
-- [ ] Multer
-- [ ] Node-cron
-
-## Bases de datos
-- [ ] ORM
-- [ ] Sequelize
-- [ ] NoSQL
-- [ ] MongoDB
-- [ ] ODM
-- [ ] Mongoose
-- [ ] Schemas
-- [ ] Models
-- [ ] Índices
-- [ ] Paginación
-- [ ] Filtros
-- [ ] Ordenamiento
-
-## Seguridad
-- [ ] dotenv
-- [ ] bcrypt
-- [ ] JWT
-- [ ] Rutas protegidas
-- [ ] XSS
-- [ ] CSRF
-- [ ] Helmet
-
-## Testing
-- [ ] TDD
-- [ ] Pruebas unitarias
-- [ ] Jest
-- [ ] Mocha
-- [ ] Jasmine
-- [ ] Mocks
-- [ ] Spies
-- [ ] Cobertura
-- [ ] Pruebas funcionales
-- [ ] Supertest
-
-## Calidad
-- [ ] Manejo de errores
-- [ ] Códigos HTTP
-- [ ] ESLint
-- [ ] Prettier
-- [ ] SonarQube
-- [ ] CI/CD
-- [ ] IA para pruebas
-
-## Producción
-- [ ] PM2
-- [ ] Docker
-- [ ] Dockerfile
-- [ ] Docker Compose
-
-## Cloud
-- [ ] AWS
-- [ ] GCP
-- [ ] Azure
-- [ ] EC2
-- [ ] S3
-- [ ] Cloud Functions
-- [ ] Cloud SQL
-- [ ] Elastic Beanstalk
-- [ ] Kubernetes
-
-## Serverless
-- [ ] API Serverless
-- [ ] AWS Lambda
-- [ ] API Gateway
-- [ ] Integraciones
-- [ ] Bases de datos
-- [ ] Mensajería
-- [ ] APIs externas
-- [ ] Despliegue de API Serverless
+main
+  │
+  └── develop
+        │
+        ├── feature/auth
+        ├── feature/users
+        ├── feature/tasks
+        ├── feature/swagger
+        └── feature/tests

@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
-import { CreateUserDto } from "../dto/user.dto";
+import { CreateUserDto } from "../dto/request/user.dto";
 import { createUserService } from "../services/user.service";
-import type { UserRepository } from "../repositories/interfaces/user.repository.interface";
 import { UserRepositoryImpl } from "../repositories/user.repository";
 
 export const getUsers = (req: Request, res: Response):void =>{

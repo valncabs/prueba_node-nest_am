@@ -1,4 +1,4 @@
-import type { CreateUserDto } from "../dto/user.dto";
+import type { CreateUserDto } from "../dto/request/user.dto";
 import type { UserRepository } from "../repositories/interfaces/user.repository.interface";
 
 
