@@ -2,15 +2,20 @@ import express from "express";
 import type { Request, Response} from "express";
 import userRouter from "./routes/user.routes";
 import sequelize from "./config/database";
-
+import "./models"
 
 sequelize.authenticate()
-.then(() => {
-    console.log("Base de datos conectada");
-})
-.catch((error) => {
-    console.error("Error al conectar con la base de datos:", error);
-});
+    .then(() => {
+        console.log("Base de datos conectada");
+        //return sequelize.sync({ force: true });
+        return sequelize.sync();
+    })
+    .then(() => {
+        console.log("Tablas sincronizadas");
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
 
 const app = express()
 app.use(express.json());

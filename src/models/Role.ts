@@ -1,7 +1,7 @@
-import { DataType, DataTypes, Model } from "sequelize";
+import { DataTypes, Model, InferAttributes, InferCreationAttributes} from "sequelize";
 import sequelize from "../config/database";
 
-class Role extends Model{
+class Role extends Model<InferAttributes<Role>, InferCreationAttributes<Role>>{
     declare id: number;
     declare name: string;
 }
@@ -22,3 +22,5 @@ Role.init({
     tableName: "roles",
     timestamps: true,
 });
+
+export default Role

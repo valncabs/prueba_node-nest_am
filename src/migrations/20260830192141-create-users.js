@@ -1,21 +1,16 @@
-import sequelize from "../config/database";
-import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+"use strict";
 
-class User extends Model<InferAttributes<User>, InferCreationAttributes<User>>{
-    declare id: number;
-    declare name: string;
-    declare email: string;
-    declare password: string;
-    declare roleId: number;
-    declare createdAt: Date;
-    declare updatedAt: Date;
-}
-User.init({
-  id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false,
+const { DataTypes } = require("sequelize");
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+    async up(queryInterface) {
+        await queryInterface.createTable("users", {
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull: false,
             },
 
             name: {
@@ -37,6 +32,10 @@ User.init({
             roleId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
+                references: {
+                    model: "roles",
+                    key: "id",
+                },
             },
 
             createdAt: {
@@ -48,11 +47,10 @@ User.init({
                 type: DataTypes.DATE,
                 allowNull: false,
             },
-},{
-    sequelize,
-    tableName: "users",
-    timestamps: true
+        });
+    },
 
-})
-
-export default User
+    async down(queryInterface) {
+        await queryInterface.dropTable("users");
+    },
+};
