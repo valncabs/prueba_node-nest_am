@@ -1,4 +1,9 @@
 export interface CreateUserDto{
-    name: string,
-    email: string
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+    roleId: number;
+    createdAt: Date;
+    updatedAt: Date;
 }
