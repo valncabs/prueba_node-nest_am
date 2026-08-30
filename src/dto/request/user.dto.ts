@@ -4,6 +4,7 @@ export interface CreateUserDto{
     email: string;
     password: string;
     roleId: number;
+    status: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

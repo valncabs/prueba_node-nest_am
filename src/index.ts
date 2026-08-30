@@ -1,13 +1,27 @@
 import express from "express";
 import type { Request, Response} from "express";
 import userRouter from "./routes/user.routes";
+import authRoutes from "./routes/auth.routes";
 import sequelize from "./config/database";
 import "./models"
+import helmet from "helmet";
+import cors from "cors";
+
+const app = express()
+app.use(express.json());
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+
+
+app.use("/users", userRouter);
+app.use("/auth", authRoutes);
 
 sequelize.authenticate()
     .then(() => {
         console.log("Base de datos conectada");
         //return sequelize.sync({ force: true });
+        // sequelize.sync({ alter: true })
         return sequelize.sync();
     })
     .then(() => {
@@ -17,53 +31,12 @@ sequelize.authenticate()
         console.error("Error:", error);
     });
 
-const app = express()
-app.use(express.json());
-
-
-app.use("/users", userRouter);
-
-// app.use((req: Request, res: Response, next: NextFunction):void =>{
-//     console.log(`${req.method} ${req.url}`);
-//     next()
-// })
-
-
-// const validateUser = (req: Request, res: Response, next: NextFunction): void => {
-//     const { name } = req.body;
-//     if (!name) {
-//         res.status(400).json({
-//             message: "El nombre es obligatorio"
-//         });
-//         return;
-//     }
-//     next();
-// };
-
-// app.post("/users", validateUser, (req: Request, res: Response) => {
-//     const user = req.body;
-//     res.status(201).json({
-//         message: "Usuario creado",
-//         user
-//     });
-// });
-
 app.get("/health", (req: Request, res: Response)=>{
     res.json({
         status: 'ok',
         message: 'Servidor funcionando'
     })
 })
-
-// app.post("/users", (req, res) => {
-//     const user = req.body;
-//     console.log(user);
-
-//     res.status(201).json({
-//         message: "Usuario creado",
-//         user: user
-//     });
-// });
 
 app.listen(3000, ()=>{
     console.log('hola desde el puerto 3000')

@@ -7,6 +7,7 @@ class User extends Model<InferAttributes<User>, InferCreationAttributes<User>>{
     declare email: string;
     declare password: string;
     declare roleId: number;
+    declare status: boolean;
     declare createdAt: Date;
     declare updatedAt: Date;
 }
@@ -38,7 +39,11 @@ User.init({
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
-
+            status: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: true
+            },
             createdAt: {
                 type: DataTypes.DATE,
                 allowNull: false,
