@@ -3,17 +3,18 @@ import {
     DataTypes,
     InferAttributes,
     InferCreationAttributes,
-    Model
+    Model,
+    CreationOptional
 } from "sequelize";
 
 class Task extends Model<InferAttributes<Task>,InferCreationAttributes<Task>> {
-    declare id: number;
+    declare id: CreationOptional<number>;
     declare title: string;
-    declare description: string;
-    declare status: string;
+    declare description: CreationOptional<string | null>;
+    declare status: CreationOptional<string>;
     declare userId: number;
-    declare createdAt: Date;
-    declare updatedAt: Date;
+    declare createdAt: CreationOptional<Date>;
+    declare updatedAt: CreationOptional<Date>;
 }
 
 Task.init(
