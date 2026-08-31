@@ -1,0 +1,10 @@
+Estudiar TypeScript|Repasar interfaces y tipos|pending
+Crear API|Desarrollar endpoints de usuarios|pending
+Configurar Sequelize|Conectar la aplicación con PostgreSQL|completed
+Implementar JWT|Agregar autenticación con tokens|pending
+Crear Middleware|Proteger las rutas privadas|pending
+Probar Multer|Implementar carga masiva de tareas|pending
+Escribir pruebas|Crear pruebas con Jest|pending
+Documentar API|Agregar Swagger y JSDoc|pending
+Crear Dockerfile|Configurar Docker para la aplicación|pending
+Preparar README|Documentar instalación y uso del proyecto|pending

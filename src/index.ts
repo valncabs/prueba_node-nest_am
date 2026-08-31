@@ -2,7 +2,7 @@ import express from "express";
 import type { Request, Response} from "express";
 import userRouter from "./routes/user.routes";
 import authRoutes from "./routes/auth.routes";
-import taskRoutes from "./routes/task.routes";
+import taskRouter from "./routes/task.routes";
 import sequelize from "./config/database";
 import "./models"
 import helmet from "helmet";
@@ -16,7 +16,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use("/tasks", taskRoutes);
+app.use("/tasks", taskRouter);
 app.use("/users", userRouter);
 app.use("/auth", authRoutes);
 

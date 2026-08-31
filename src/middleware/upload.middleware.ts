@@ -17,7 +17,6 @@ const fileFilter = (
     file: Express.Multer.File,
     cb: multer.FileFilterCallback
 ) => {
-
     const extension = path.extname(file.originalname).toLowerCase();
 
     if (extension !== ".txt") {
