@@ -26,11 +26,11 @@ const router = Router();
  *             properties:
  *               name:
  *                 type: string
- *                 example: Valery
+ *                 example: Valentina
  *               email:
  *                 type: string
  *                 format: email
- *                 example: valery@example.com
+ *                 example: valentina@example.com
  *               password:
  *                 type: string
  *                 format: password

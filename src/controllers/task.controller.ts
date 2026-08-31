@@ -1,3 +1,4 @@
+
 import { Request, Response } from "express";
 import * as taskService from "../services/task.service";
 
@@ -7,23 +8,29 @@ export const createTask = async (
 ) => {
     try {
         const { title, description } = req.body;
+
         if (!req.user) {
             return res.status(401).json({
                 message: "Usuario no autenticado"
             });
         }
+
         const userId = req.user.id;
+
         const task = await taskService.createTask({
             title,
             description,
             userId
         });
+
         res.status(201).json({
             message: "Tarea creada correctamente",
             task
         });
+
     } catch (error) {
         console.error("ERROR AL CREAR TAREA:", error);
+
         res.status(500).json({
             message: "Error al crear tarea"
         });
@@ -43,15 +50,18 @@ export const getAllTasks = async (
             tasks
         });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("ERROR AL OBTENER TAREAS:", error);
 
         res.status(500).json({
             message: "Error al obtener tareas",
-            error: error.message
+            error: error instanceof Error
+                ? error.message
+                : "Error desconocido"
         });
     }
 };
+
 
 export const getTaskById = async (
     req: Request,
@@ -67,11 +77,13 @@ export const getTaskById = async (
             task
         });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("ERROR AL OBTENER TAREA:", error);
 
         res.status(404).json({
-            message: error.message
+            message: error instanceof Error
+                ? error.message
+                : "Error desconocido"
         });
     }
 };
@@ -91,11 +103,13 @@ export const deleteTask = async (
             task
         });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("ERROR AL ELIMINAR TAREA:", error);
 
         res.status(404).json({
-            message: error.message
+            message: error instanceof Error
+                ? error.message
+                : "Error desconocido"
         });
     }
 };
@@ -121,11 +135,13 @@ export const updateTask = async (
             task
         });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("ERROR AL ACTUALIZAR TAREA:", error);
 
         res.status(404).json({
-            message: error.message
+            message: error instanceof Error
+                ? error.message
+                : "Error desconocido"
         });
     }
 };
@@ -135,9 +151,7 @@ export const importTasks = async (
     req: Request,
     res: Response
 ) => {
-
     try {
-
         if (!req.file) {
             return res.status(400).json({
                 message: "Debes subir un archivo .txt"
@@ -164,7 +178,6 @@ export const importTasks = async (
         });
 
     } catch (error) {
-
         console.error("ERROR AL IMPORTAR TAREAS:", error);
 
         return res.status(400).json({
@@ -174,3 +187,4 @@ export const importTasks = async (
         });
     }
 };
+

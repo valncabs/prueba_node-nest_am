@@ -1,4 +1,5 @@
-import type { CreateUserDto } from "../dto/request/user.dto"
+
+import type { CreateUserDto } from "../dto/request/user.dto";
 import User from "../models/User";
 import type { UserRepository } from "./interfaces/user.repository.interface";
 
@@ -19,6 +20,7 @@ export const findAllUsers = async () => {
     });
 };
 
+
 export const findUserByEmail = async (email: string) => {
     return await User.findOne({
         where: {
@@ -27,6 +29,7 @@ export const findUserByEmail = async (email: string) => {
     });
 };
 
+
 export const updateUserById = async (
     id: number,
     data: {
@@ -34,14 +37,24 @@ export const updateUserById = async (
         email?: string;
         password?: string;
         roleId?: number;
-    }) => {
+    }
+) => {
     const user = await User.findByPk(id);
+
     if (!user) {
         return null;
     }
+
     await user.update(data);
+
     const updatedUser = user.toJSON();
-    const { password, ...userWithoutPassword } = updatedUser;
+
+    const userWithoutPassword = Object.fromEntries(
+        Object.entries(updatedUser).filter(
+            ([key]) => key !== "password"
+        )
+    );
+
     return userWithoutPassword;
 };
 
@@ -54,12 +67,18 @@ export const findUserById = async (id: number) => {
     });
 };
 
+
 export const deleteUserById = async (id: number) => {
     const user = await User.findByPk(id);
+
     if (!user) {
         return null;
     }
+
     user.status = false;
+
     await user.save();
+
     return user;
 };
+

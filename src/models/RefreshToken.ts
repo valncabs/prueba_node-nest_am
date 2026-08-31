@@ -3,16 +3,19 @@ import {
     Model,
     InferAttributes,
     InferCreationAttributes,
+    CreationOptional, // 1. Agrega esto
 } from "sequelize";
 
 import sequelize from "../config/database";
 
 class RefreshToken extends Model<InferAttributes<RefreshToken>, InferCreationAttributes<RefreshToken>> {
-    declare id: number;
+    declare id: CreationOptional<number>; 
     declare token: string;
     declare userId: number;
     declare expiresAt: Date;
 }
+
+
 
 RefreshToken.init(
     {
