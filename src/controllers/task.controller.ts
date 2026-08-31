@@ -6,9 +6,7 @@ export const createTask = async (
     res: Response
 ) => {
     try {
-        const { title, description } = req.body;
-
-        const userId = 4;
+        const { title, description, userId } = req.body;
 
         const task = await taskService.createTask({
             title,
@@ -29,3 +27,103 @@ export const createTask = async (
         });
     }
 };
+
+export const getAllTasks = async (
+    req: Request,
+    res: Response
+) => {
+    try {
+        const tasks = await taskService.getAllTasks();
+
+        res.status(200).json({
+            message: "Tareas obtenidas correctamente",
+            tasks
+        });
+
+    } catch (error: any) {
+        console.error("ERROR AL OBTENER TAREAS:", error);
+
+        res.status(500).json({
+            message: "Error al obtener tareas",
+            error: error.message
+        });
+    }
+};
+
+export const getTaskById = async (
+    req: Request,
+    res: Response
+) => {
+    try {
+        const id = Number(req.params.id);
+
+        const task = await taskService.getTaskById(id);
+
+        res.status(200).json({
+            message: "Tarea obtenida correctamente",
+            task
+        });
+
+    } catch (error: any) {
+        console.error("ERROR AL OBTENER TAREA:", error);
+
+        res.status(404).json({
+            message: error.message
+        });
+    }
+};
+
+
+export const deleteTask = async (
+    req: Request,
+    res: Response
+) => {
+    try {
+        const id = Number(req.params.id);
+
+        const task = await taskService.deleteTask(id);
+
+        res.status(200).json({
+            message: "Tarea eliminada correctamente",
+            task
+        });
+
+    } catch (error: any) {
+        console.error("ERROR AL ELIMINAR TAREA:", error);
+
+        res.status(404).json({
+            message: error.message
+        });
+    }
+};
+
+
+export const updateTask = async (
+    req: Request,
+    res: Response
+) => {
+    try {
+        const id = Number(req.params.id);
+
+        const { title, description, status } = req.body;
+
+        const task = await taskService.updateTask(id, {
+            title,
+            description,
+            status
+        });
+
+        res.status(200).json({
+            message: "Tarea actualizada correctamente",
+            task
+        });
+
+    } catch (error: any) {
+        console.error("ERROR AL ACTUALIZAR TAREA:", error);
+
+        res.status(404).json({
+            message: error.message
+        });
+    }
+};
+
