@@ -1,7 +1,10 @@
 import { Router } from "express";
 import * as taskController from "../controllers/task.controller";
+import { authMiddleware } from "../middleware/auth.middleware";
 
 const router = Router();
+
+router.use(authMiddleware);
 
 router.post("/", taskController.createTask);
 router.get("/", taskController.getAllTasks);

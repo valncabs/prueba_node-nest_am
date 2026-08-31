@@ -6,27 +6,30 @@ export const createTask = async (
     res: Response
 ) => {
     try {
-        const { title, description, userId } = req.body;
-
+        const { title, description } = req.body;
+        if (!req.user) {
+            return res.status(401).json({
+                message: "Usuario no autenticado"
+            });
+        }
+        const userId = req.user.id;
         const task = await taskService.createTask({
             title,
             description,
             userId
         });
-
         res.status(201).json({
             message: "Tarea creada correctamente",
             task
         });
-
     } catch (error) {
         console.error("ERROR AL CREAR TAREA:", error);
-
         res.status(500).json({
             message: "Error al crear tarea"
         });
     }
 };
+
 
 export const getAllTasks = async (
     req: Request,
