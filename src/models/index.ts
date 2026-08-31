@@ -1,6 +1,7 @@
 import User from "./User";
 import Role from "./Role";
 import Task from "./Task";
+import RefreshToken from "./RefreshToken";
 
 Role.hasMany(User, {
     foreignKey: "roleId",
@@ -15,6 +16,14 @@ User.hasMany(Task, {
 });
 
 Task.belongsTo(User, {
+    foreignKey: "userId",
+});
+
+User.hasMany(RefreshToken, {
+    foreignKey: "userId",
+});
+
+RefreshToken.belongsTo(User, {
     foreignKey: "userId",
 });
 
