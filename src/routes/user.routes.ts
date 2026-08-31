@@ -70,7 +70,7 @@ router.post("/", userController.createUser);
 router.get(
     "/",
     authMiddleware,
-    roleMiddleware([1]),
+    roleMiddleware([1,2]),
     userController.getUsers
 );
 
